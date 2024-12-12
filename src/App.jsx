@@ -1,16 +1,20 @@
-import { useState } from "react";
+import ColorList from "./ColorList";
 import Form from "./Form";
 import Values from "values.js";
-import ColorList from "./ColorList";
-function App() {
-  const [colors, setColors] = useState([new Values("#f15025").all(10)]);
+import { useState } from "react";
+const App = () => {
+  const [colors, setColors] = useState(new Values("#f15025").all(10));
+
+  const addColor = (color) => {
+    const newColors = new Values(color).all(10);
+    setColors(newColors);
+  };
 
   return (
-    <div>
-      <Form />
+    <main>
+      <Form addColor={addColor} />
       <ColorList colors={colors} />
-    </div>
+    </main>
   );
-}
-
+};
 export default App;
