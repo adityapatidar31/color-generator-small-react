@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { toast } from "react-toastify";
 
 const SingleColor = ({ index, color }) => {
   const { hex, weight } = color;
@@ -6,9 +7,13 @@ const SingleColor = ({ index, color }) => {
     if (navigator.clipboard) {
       try {
         await navigator.clipboard.writeText(`#${hex}`);
+        toast.success("Color copied to clipboard");
       } catch (error) {
         console.log(error);
+        toast.error("Failed to copy color to clipboard");
       }
+    } else {
+      toast.error("Clipboard access not available");
     }
   };
   return (
