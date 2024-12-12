@@ -1,5 +1,11 @@
+import Form from "./Form";
+
 function App() {
-  return <div>Hello There</div>;
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 }
 
 export default App;
