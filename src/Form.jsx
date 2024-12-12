@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-// eslint-disable-next-line react/prop-types
+/* eslint-disable react/prop-types */
 const Form = ({ addColor }) => {
   const [color, setColor] = useState("");
   const handleSubmit = (e) => {
