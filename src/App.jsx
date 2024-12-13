@@ -14,7 +14,6 @@ const App = () => {
       toast.error(error.message);
     }
   };
-  toast.success("hey");
   return (
     <main>
       <Form addColor={addColor} />
